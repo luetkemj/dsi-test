@@ -1,6 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { VueLoaderPlugin } = require('vue-loader')
+const { VueLoaderPlugin } = require("vue-loader");
 
 module.exports = {
   mode: "development",
@@ -39,8 +39,16 @@ module.exports = {
     new VueLoaderPlugin(),
   ],
   output: {
-    filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
+    filename: "index.js",
     clean: true,
+    globalObject: "this",
+    library: {
+      name: "dsi",
+      type: "umd",
+    },
   },
+  externals: {
+    vue: 'vue'
+  }
 };

@@ -1,16 +1,15 @@
 <template>
-  <div>Hello World From Vue App</div>
+  <div class="world">world</div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'World'
 }
 </script>
 
 <style>
-div {
-  color: red;
+.world {
+  color: blue;
 }
-
 </style>
